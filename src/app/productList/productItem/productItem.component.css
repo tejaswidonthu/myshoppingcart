@@ -1,0 +1,19 @@
+.backset{
+    margin-top: 20px;
+    height: 450px;
+    width: 400px;
+    border: solid 1px transparent;
+    text-align: center !important;
+}
+
+.pull-top{
+    border: solid 1px gray;
+    margin:0 20%;
+}
+
+.pull-down{
+    margin-top:15px;
+    text-align: center;
+    text-decoration: navy;
+    font-weight: bolder;
+}

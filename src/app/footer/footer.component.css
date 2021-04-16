@@ -1,0 +1,70 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #3B5998;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    width: 25px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    color: white;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+ 
+
+  /* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  top: 80%;
+  left: 97%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: white;
+  background: tan;
+  /* background: rgb(121, 210, 252); */
+  font-size: 40px;
+  border: solid 1px rgb(121, 210, 252);
+}
+
+.icon-bar img {
+  height: 40px;
+  width: 40px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}

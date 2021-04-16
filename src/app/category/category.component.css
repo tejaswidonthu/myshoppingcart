@@ -5,6 +5,13 @@
     color: white;
   }
   
+  .back-container-heading {
+    position: relative;
+    margin-top: 30%;
+    text-align: center;
+    color: navy;
+  }
+  
 .centered {
     position: absolute;
     top: 65%;

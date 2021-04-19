@@ -2,8 +2,43 @@
     background: rgb(245, 215, 84);;
 }
 .container-fluid {
-    min-height: 100px !important;
+    min-height: 80px !important;
 }
 .nav {
     margin-top: 25px;
 }
+
+.container-header{
+    min-height: 80px !important;
+    background: rgb(245, 215, 84);
+    padding-top: 30px;
+    padding-left: 10px;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0px;
+    width: 100%;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: navy;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color:rgb(100, 190, 231);;
+  }
+  
+  .active {
+    border: 1px solid  rgb(59, 170, 221);
+  }

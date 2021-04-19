@@ -1,28 +1,32 @@
-<nav class="navbar navbar-default">
-    <!-- <div class="container-fluid" style="background: rgb(57, 209, 247);">
+<!--<nav class="navbar navbar-default">
+     <div class="container-fluid" style="background: rgb(57, 209, 247);">
     <p style="margin: 15px" >OUR PHONE NUMBERS : 121312647313487,1231243781</p> -->
-    <div  class="navbar-default">
-        <p style="margin: 15px" >OUR PHONE NUMBERS : 121312647313487,1231243781</p>
-        <div class="container-fluid" style="background: rgb(121, 210, 252);">
-        <ul class="nav navbar-nav navbar-left">
-            <li> <a title="Home" href="#"><img id="img" height="20px" width="20px" src="/assets/img/home.png" style="border: 0; float: left; margin-right: 5px" /> 
+    <div  class="container-header">
+        <p >OUR PHONE NUMBERS : 121312647313487,1231243781</p> 
+    </div>    
+         <div class="container-fluid" style="background: rgb(121, 210, 252);">           
+         <ul><!--class="nav navbar-nav navbar-left" -->
+            <li routerLinkActive="active"> 
+                <a title="Home"  routerLink="/home"><img id="img" height="20px" width="20px" src="/assets/img/home.png" style="border: 0; float: left; margin-right: 5px" /> 
                 <span id="title">HOME</span></a></li>
-            <li> <a title="Toys" href="#"><img id="img" height="20px" width="20px" src="/assets/img/toys.png" style="border: 0; float: left; margin-right: 5px" /> 
+            <li routerLinkActive="active">
+                <a title="Toys" href="#"><img id="img" height="20px" width="20px" src="/assets/img/toys.png" style="border: 0; float: left; margin-right: 5px" /> 
                 <span id="title">TOYS</span></a></li>
-            <li> <a title="Books" href="#"><img id="img" height="20px" width="20px" src="/assets/img/books.png" style="border: 0; float: left; margin-right: 5px" /> 
+            <li routerLinkActive="active"> 
+                <a title="Books" href="#"><img id="img" height="20px" width="20px" src="/assets/img/books.png" style="border: 0; float: left; margin-right: 5px" /> 
                 <span id="title">BOOKS</span></a></li> 
-            <li>  <a title="Reviews" href="#"><img id="img" height="20px" width="20px" src="/assets/img/reviews.png" style="border: 0; float: left; margin-right: 5px" /> 
+            <li routerLinkActive="active">  
+                <a title="Reviews" href="#"><img id="img" height="20px" width="20px" src="/assets/img/reviews.png" style="border: 0; float: left; margin-right: 5px" /> 
                 <span id="title">REVIEWS</span></a></li>
+            <li style="float: right;" routerLinkActive="active"> <a id="img1" title="My Cart"  routerLink="/cart">
+                    <img id="img1" height="20px" width="20px" src="/assets/img/cart.png" style="border: 0; float: left; margin-right: 5px" /> 
+                    <span id="title1">My Cart</span></a></li> 
+            <li style="float: right;" routerLinkActive="active"> <a id="img" title="Login/Register"  routerLink="/auth">
+                    <img id="img" height="20px" width="20px" src="/assets/img/Login.png" style="border: 0; float: left; margin-right: 5px" /> 
+                    <span id="title">Login/Register</span></a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li> <a id="img" title="Login/Register" href="#">
-                <img id="img" height="20px" width="20px" src="/assets/img/Login.png" style="border: 0; float: left; margin-right: 5px" /> 
-                <span id="title">Login/Register</span></a></li>
-            <li> <a id="img1" title="My Cart" href="#">
-                <img id="img1" height="20px" width="20px" src="/assets/img/cart.png" style="border: 0; float: left; margin-right: 5px" /> 
-                <span id="title1">My Cart</span></a></li> 
-                <li> </li>           
-        </ul>      
-    </div>
+        <!-- <ul>  class="nav navbar-nav navbar-right"
+            
+        </ul> -->
     </div> 
-</nav>
+ <!--</nav> -->

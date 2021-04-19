@@ -10,6 +10,7 @@ import { ProductListComponent } from './productList/productList.component';
 import { ProductItemComponent } from './productList/productItem/productItem.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
     CategoryComponent,
     ProductListComponent,
     ProductItemComponent,
-    FooterComponent
+    FooterComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

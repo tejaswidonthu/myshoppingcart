@@ -1,0 +1,46 @@
+<div class="backdrop" (click)="onClose()"></div>
+
+<div id="alert-box" class="alert-box">
+    <div class="alert-box-actions">
+        <button type="button" class="close" data-dismiss="alert-box" (click)="onClose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> 
+        <div class="row">
+        <div class="col-sm-8 pull-left">
+             <div class="pull-top">
+                <img id="main-img" height="600" width="600" [src]="imgSource" alt="{{product.name}}" class="img-responsive" >
+            </div>
+            <div class="row">
+                <div class="pull-down" >
+                <ul *ngFor="let imgEl of images;let i=index"><!--class="nav navbar-nav navbar-left" -->        
+                    <li> 
+                        <a (click)="onImgClick(imgEl)"><img height="100px" width="100px" [src]="imgEl" alt="{{product.name}}" class="img-responsive" > 
+                        </a>
+                    </li>
+                </ul>                   
+                </div>
+            </div>
+        
+            </div> 
+        <div class="col-sm-4 pull-right">
+             <div class="center">
+                <h1>{{product.name}}</h1>
+                <p>{{product.price}}</p>
+                <span>{{product.description}}</span>
+                <div class="center">
+                    <ul><!--class="nav navbar-nav navbar-left" -->        
+                        <li> 
+                            <label class="stock" for="stock" style="border: 2px solid green;">IN STOCK - {{ product.stock}}</label></li> 
+                        <li><input type="number" value="1"title="Qty"></li>
+                        <li><button [disabled] ="product.stock > 0 ? false : true" class="btn btn-danger">Add to Cart</button></li>
+                    
+                    </ul>     
+                </div>
+            </div> 
+            <div class="pull-down">
+                <p>{{ product.productId }}</p>
+            </div>
+        </div>
+    </div>
+</div>

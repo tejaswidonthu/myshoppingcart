@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-shopping-cart';  
+
+  goTopFunction(){
+  window.scrollTo(0, 0);
+  }
 }

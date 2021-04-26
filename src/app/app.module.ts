@@ -11,6 +11,9 @@ import { ProductItemComponent } from './productList/productItem/productItem.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './auth/auth.component';
+import { CartComponent } from './cart/cart.component';
+import { ProductService } from './shared/product.service';
+import { ProductDetailsComponent } from './productList/productDetails/productDetails.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,10 @@ import { AuthComponent } from './auth/auth.component';
     CategoryComponent,
     ProductListComponent,
     ProductItemComponent,
+    ProductDetailsComponent,
     FooterComponent,
-    AuthComponent
+    AuthComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { AuthComponent } from './auth/auth.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

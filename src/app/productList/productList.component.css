@@ -4,6 +4,10 @@
     grid-template-columns: 1fr 1fr 1fr; /* Create 3 columns and auto-place rows */
 }
 
+.ngContainer{
+  padding: 15px;
+}
+
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;

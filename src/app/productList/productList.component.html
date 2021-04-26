@@ -1,11 +1,12 @@
-<div>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
     <div class="container">
         <app-category></app-category>    
       </div>
 <div class="row">
-<ng-container  *ngFor="let number of [0,1,2,3,4];let i=index">
+ <ng-container class="ngContainer" *ngFor="let productEl of products;let i=index"><!--*ngFor="let number of [0,1,2,3,4];let i=index"> -->
     <div class="column">
-    <app-productitem  ></app-productitem>
+    <app-productitem  [product]="productEl" [index]="productEl.productId"></app-productitem>
 </div>
 </ng-container>
 </div>

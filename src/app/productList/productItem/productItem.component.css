@@ -1,14 +1,18 @@
-.backset{
-    margin-top: 20px;
-    height: 450px;
-    width: 400px;
-    border: solid 1px transparent;
+.bgcontainer{
+    margin: 20px;
     text-align: center !important;
 }
 
-.pull-top{
+.borderdiv{
+    padding : 12px;
     border: solid 1px gray;
-    margin:0 20%;
+    text-align: center;
+}
+
+.pull-top{    
+ height: 300px !important;
+ width: 300px !important;
+ text-align: center !important;
 }
 
 .pull-down{
@@ -17,4 +21,49 @@
     font-size: large;
     text-decoration: navy;
     font-weight: bolder;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive layout - to change image size as per window size */
+@media screen and (max-width: 1200px) {
+    img {
+        -ms-flex: 75%;
+      flex: 75%;
+      max-width: 75%;
+      max-height: 75%;
+    }
+  }
+
+
+@media screen and (max-width: 1000px) {
+    img {
+        -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+      max-height: 50%;
+    }
+  }
+
+  /* Responsive layout -to change image size as per window size makes a two column-layout instead of four columns */
+ @media screen and (max-width: 800px) {
+    img {
+        -ms-flex: 75%;
+      flex: 75%;
+      max-width: 75%;
+      max-height: 75%;
+    }
+  }  
+
+  /* Responsive layout -to change image size as per window size makes a one column-layout instead of four columns */
+  @media screen and (max-width: 600px) {
+    img {
+        -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
 }

@@ -1,10 +1,12 @@
-<div class="backset">
-<a style="cursor: pointer;">
+<div class="bgcontainer">
+<a style="cursor: pointer;"  [routerLink]="[product.productId]"  routerLinkActive="active">
+    <div class="borderdiv">
     <div class="pull-top">
-        <img src="/assets/img/EXE.jpg" alt="name" class="img-responsive" >
+        <img [src]="product.imagePath[0]" alt="{{product.name}}" class="img-responsive" >
     </div>
-    <p class="pull-down">Namedcdcsxgvdfbv bvcbgd</p>
+    <p class="pull-down">{{ product.name }}</p>
+</div>
 </a>   
-<p class="pull-down"> ₹750 </p>
+<p class="pull-down"> {{ product.price }} </p>
 <button class="btn btn-danger">ADD TO CART</button>
 </div>

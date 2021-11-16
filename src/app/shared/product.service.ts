@@ -9,6 +9,7 @@ import { Product } from '../productList/product.model';
 export class ProductService {
 
    productChanged = new Subject<Product[]>();
+   productSelected = new Subject<Product[]>();
 
   private products : Product[] = [
     new Product('Tasty Schnitzel','1231','₹751','This set of wooden building blocks includes 100 durable wooden blocks in different colors and shapes: the construction possibilities are endless! This classic educational toy provides hours of hands-on screen-free playtime, introduces early math concepts, teaches shape recognition, develops strong motor skills, and even resilience as kids experiment with building, knocking blocks over, and building again.'+
@@ -23,7 +24,7 @@ export class ProductService {
     new Product('Tasty Schnitzel','1233','₹753','simple Tasty Schnitzel recipe',['https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg',
     'https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg','https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg'],3
     ),
-    new Product('Tasty Schnitzel','1234','₹754','simple Tasty Schnitzel recipe',['https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg',
+    new Product('aaaxsdsd','1234','₹754','simple Tasty Schnitzel recipe',['https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg',
     'https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg','https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg'],3
     ),
     new Product('Tasty Schnitzel','1235','₹755','simple Tasty Schnitzel recipe',['https://image.shutterstock.com/image-photo/schnitzel-fried-potatoes-on-dark-260nw-482743804.jpg',
@@ -40,7 +41,7 @@ export class ProductService {
     )
   ];
 
-  //private products : Product[] = [];
+  private selectedProducts : Product[] = [];
   
   constructor() { }
 
@@ -68,9 +69,22 @@ export class ProductService {
    
   }
 
-  addToCart(){
-
+  addToCart(product : Product){
+    console.log("added to cart service" + "  " + product);
+    this.selectedProducts.push(product);
+    this.productSelected.next(this.selectedProducts.slice());
+    console.log(this.selectedProducts);
   }
+
+  removeFromCart(index : number){
+    this.selectedProducts.splice(index,1);
+    this.productSelected.next(this.selectedProducts.slice());
+  }
+
+  getCartItems(){
+    return this.selectedProducts;
+  }  
+
 
 //   addRecipe(recipe : Recipe){
 //     this.recipes.push(recipe);

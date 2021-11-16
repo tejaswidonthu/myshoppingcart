@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="empty-cart">
+    <div class="empty-cart" *ngIf = isCartEmpty>
         <h1><b>YOUR CART IS CURRENTLY EMPTY</b></h1>
         <span>Before proceed to checkout you must add some products to your shopping cart.<br>
             You will find a lot of interesting products on our "Home" page.</span>           
     </div>
-    <div class="product-cart">
+    <div class="product-cart" *ngIf = !isCartEmpty>
       <div class="row">
         <div class="columnProduct">
           <h2>Product</h2>
@@ -22,13 +22,13 @@
           <h2>    </h2>
         </div>         
       </div>
-        <div class="row" *ngFor="let number of [0,1,2,3,4];let i=index">
+        <div class="row" *ngFor="let productEl of products;let i=index">
           <div class="columnProduct">
-            <img id="img" height="100px" width="100px" src="/assets/img/EXE.jpg" style="border: 0; float: left; margin-right: 5px" />
-            <h3 id="title">Namedcdcsxgvdfbv bvcbgd</h3>
+            <img id="img" height="100px" width="100px" [src]="productEl.imagePath[0]" alt="{{productEl.name}}" style="border: 0; float: left; margin-right: 5px" />
+            <h3 id="title">{{productEl.name}}</h3>
           </div>
           <div class="column">
-            <h3>10</h3>
+            <h3>{{productEl.price}}</h3>
           </div>
           <div class="column">
               <input type="number" id="amount" value="1">
@@ -37,7 +37,7 @@
             <h3>20</h3>
           </div>
           <div class="columnCancel">
-            <button class="btn btn-primary btn-sm">X</button>
+            <button class="btn btn-primary btn-sm" (click)="onCartItemDelete(i)">X</button>
           </div>
 
         <!--<div class="list-group-item clearfix">
@@ -75,8 +75,48 @@
      <div>
         <a title="Home"  routerLink="/home"><button class="btn btn-success">Return to Home</button></a>
      </div>
-
-     <div class="cartTotal">
+     <div class="row">
+      <div class="pull-right">
+     <form #totalForm="ngForm" style="background: aquamarine;padding: 35px;">
+      <div class="form-group">
+        <h3 class="pull-left">Subtotal</h3>
+        <h3 class="pull-right">₹1,174.00</h3>
+      </div>
+      <div class="form-group">
+        <h3 class="pull-left">Shipping</h3>
+        <div class="pull-right">
+        <input type="radio" name="shipping_method[0]" id="standard" checked="checked"><br>
+        <label for="standard">Standard ( 4- 8 Working Days within South India)<br> 
+          (7 to 15 Working Days to North India)<br>
+          : ₹95.00</label><br>
+         <input type="radio" name="shipping_method[0]" id="speed"><br>
+         <label for="speed">Speed (3-6 Working Days within South India)<br>(5- 8 Working Days to North India)<br> ₹205.00<br>
+           Shipping to Tamil Nadu.</label></div>
+      </div>
+      <div class="form-group">
+      <ul>
+        <li><select name="country" id="#">
+          <option selected="selected" value="one">India</option>
+          <option value="two">Select a country / region...</option>
+          </select></li>
+          <li><select name="state" id="#">
+            <option selected="selected" value="one">Andhra Pradesh</option>
+            <option value="two">Telangana</option>        
+            <option value="three">Tamil Nadu</option>
+            <option value="four">Karnataka</option>         
+            </select></li>
+            <li><input size="10" type="text" value="City"></li>
+            <li><input size="10" type="text" value="postcode / ZIP"></li>
+          </ul>
+      </div>
+      <div>
+          <!-- <button class="btn btn-primary" type="submit" [disabled] ="!authForm.valid">{{ isLoginMode ? 'LogIn' : 'Sign Up'}}</button> |
+          <button class="btn btn-primary" (click)="onSwitchMode()" type="button">Switch to {{ isLoginMode ? 'SignUp' : 'LogIn' }}</button> -->
+      </div>
+  </form>
+      </div>
+     </div>
+     <!-- <div class="cartTotal">
        <div class="row">
        <div class="pull-left">
       <h3>Subtotal</h3></div>
@@ -96,5 +136,59 @@
           Shipping to Tamil Nadu.</label>
        </div>
      </div>
-     
-</div>
+     <div class="row">
+      <div class="pull-left">
+     <h3>Shipping</h3></div>
+     <div class="pull-right"> -->
+      <!-- <div class="btn-group" appDropdown>
+        <button type="button" class="btn btn-primary dropdown-toggle">
+            India<span class="caret"></span>           
+    </button>
+    <ul class="dropdown-menu">
+      <li>Select a country / region...</li>
+      <li>India</li>
+      <li><input type="text"></li>
+  </ul>
+    </div> -->
+    <!-- <ul>
+    <li><select name="country" id="#">
+      <option selected="selected" value="one">India</option>
+      <option value="two">Select a country / region...</option>
+      </select></li>
+      <li><select name="state" id="#">
+        <option selected="selected" value="one">Andhra Pradesh</option>
+        <option value="two">Telangana</option>        
+        <option value="three">Tamil Nadu</option>
+        <option value="four">Karnataka</option> -->
+      <!--  <option value="five">Bihar</option>
+        <option value="six">Chhattisgarh</option>
+        <option value="seven">Goa</option>
+        <option>Gujarat</option>
+        <option>Haryana</option>
+        <option>Himachal Pradesh</option>
+        <option>Jharkhand</option>
+        <option> Karnataka</option>
+         <option> Kerala</option>
+         <option> Madhya Pradesh</option>	
+         <option> Maharashtra</option>
+         <option> Manipur</option>
+         <option>Meghalaya</option> 
+         <option> Mizoram</option>
+         <option> Telangana</option>
+          Odisha
+          Punjab
+          Rajasthan
+          Sikkim
+          Tamil Nadu
+          Telangana
+          Tripura
+          Uttar Pradesh
+          Uttarakhand
+          Dehradun
+          West Bengal -->
+        <!-- </select></li>
+        <li><input size="10" type="text" value="City"></li>
+        <li><input size="10" type="text" value="postcode / ZIP"></li>
+      </ul> -->
+      </div>
+     </div>

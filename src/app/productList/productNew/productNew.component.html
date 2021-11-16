@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+            
+        <div class="column" style="background-color:#aaa;">
+            <div class="row">
+                <div class="col-xs-8">
+                    <button type="submit" class="btn btn-success" [disabled]="!newProductForm.valid">Save Product</button>&nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" class="form-control" formControlName="name">
+                        <span>eg: Monkey Balance Toy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="productId">ProductId *</label>
+                        <input type="text" class="form-control" id="productId" formControlName="productId">
+                        <span>eg: J117</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="price">Price *</label>
+                        <input type="text" class="form-control" id="price" formControlName="price">
+                        <span>eg: ₹753</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" rows="6" class="form-control" formControlName="description"></textarea>
+                        <span>eg: Balancing is good for The little minds🙂
+                            
+                            Also, develops hand eye co-ordination!!!</span>
+                    </div>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                    <label for="stock">Stock *</label>
+                    <input type="number" class="form-control" id="stock" formControlName="stock">
+                    <span>eg: 4 or 8</span>
+                </div>
+                </div>
+            </div>
+        </div>
+            <div class="column" style="background-color:#bbb;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img [src]="imagePath" class="img-responsive">
+                            <!-- <label for="imagePath">Add Images</label>
+                            <input type="file"(change)="onFileSelected($event)">
+                            <img [src]="imagePath" class="img-responsive"> -->
+                            <div class="form-group">
+                                <input type="file" class="form-control" id="file"(change)="onImageChange($event)">
+                                <div *ngIf="!isImageUploaded" class="alert alert-danger">
+                                  <div >Image file is required.</div>
+                                </div>
+                              </div>
+                              <button class="btn btn-success" type="submit">Upload File</button>
+                    </div>
+                </div>           
+            </div>
+        </form>
+   
+</div>
+</div>
+
+
+
+
+<!-- <div class="container">
+    <div class="col-xs-12 col-md-6 col-md-offset-3" style="background: aquamarine;">
+        <form #newForm="ngForm" >
+           
+                <div class="form-group">
+                <label for="imagePath">imagePath</label>
+                <button class="btn btn-primary" type="button" >Add Image</button>
+            </div>
+            <div class="form-group">
+                <label for="stock">stock *</label>
+                <input type="number" class="form-control" id="stock" name="stock" ngModel required>
+                <span>eg: 4 or 8</span>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="submit" [disabled] ="!newForm.valid">Add Product</button>
+            </div>
+        </form>
+    </div>
+</div> -->

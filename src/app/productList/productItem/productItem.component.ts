@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ProductService } from 'src/app/shared/product.service';
 import { Product } from '../product.model';
 
 @Component({
@@ -10,9 +10,14 @@ import { Product } from '../product.model';
 export class ProductItemComponent implements OnInit {
   @Input() product : Product;
   @Input() index : number;
-  constructor() { }
+  constructor(private productService : ProductService) { }
 
   ngOnInit(): void {
+  }
+
+  addToCart(){
+    console.log("added to cart" + "  " + this.product);
+    this.productService.addToCart(this.product);
   }
 
 }

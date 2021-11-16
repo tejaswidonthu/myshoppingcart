@@ -14,6 +14,8 @@ import { AuthComponent } from './auth/auth.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductService } from './shared/product.service';
 import { ProductDetailsComponent } from './productList/productDetails/productDetails.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { ProductNewComponent } from './productList/productNew/productNew.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,11 @@ import { ProductDetailsComponent } from './productList/productDetails/productDet
     ProductListComponent,
     ProductItemComponent,
     ProductDetailsComponent,
+    ProductNewComponent,
     FooterComponent,
     AuthComponent,
     CartComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

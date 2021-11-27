@@ -29,6 +29,7 @@ export class ProductNewComponent implements OnInit {
   
     private initForm() {
       let productName = '';
+      let productType = '';
       let productId = '';
       let price = '';
       let description = '';
@@ -37,6 +38,7 @@ export class ProductNewComponent implements OnInit {
        
       this.newProductForm = new FormGroup({
         'name': new FormControl(productName, Validators.required),
+        'type': new FormControl(productType, Validators.required),
         'productId': new FormControl(productId, Validators.required),
         'price': new FormControl(price, Validators.required),
         'description': new FormControl(description, Validators.required),
@@ -61,18 +63,21 @@ export class ProductNewComponent implements OnInit {
      const reader = new FileReader();
      
      if(e.target.files && e.target.files.length) {   
-        this.isImageUploaded = true;   
+        this.isImageUploaded = true;
+        console.log(e.target.files);  
+       // for(let i=0;i<=e.target.files.length;i++){ 
        reader.readAsDataURL( e.target.files[0]);
      
        reader.onload = () => {
-         this.imagePath = reader.result as string;
+        console.log(reader.result as string); 
+         this.imagePath =reader.result as string;
          this.newProductForm.patchValue({
            imgSrc: reader.result
          });
     
        };
+      }
      }
-   }
        
       upload(){
         console.log(this.newProductForm.value);
